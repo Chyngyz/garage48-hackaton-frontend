@@ -18,8 +18,11 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close ng-click="login()">
-          Login / Profile
+        <ion-item menu-close ng-click="login()" ng-if="!isUser">
+          Login
+        </ion-item>
+        <ion-item menu-close href="#/app/profile" ng-if="isUser">
+          Profile
         </ion-item>
         <ion-item menu-close href="#/app/search">
           Organizations

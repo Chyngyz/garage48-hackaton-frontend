@@ -4,22 +4,29 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.factories'])
+angular.module('starter', ['ionic','ngResource', 'starter.controllers', 'starter.factories', 'ionic.utils'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope, $localstorage) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
-
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
   });
+
+  $localstorage.set('user', 'Chyngyz Arystan uulu')
+
+  if ($localstorage.get('user', '') == '') {
+    $rootScope.user = null;
+  } else {
+    $rootScope.user = $localstorage.get('user');
+  };
 })
 
 .config(function($stateProvider, $urlRouterProvider, $httpProvider) {
@@ -67,7 +74,48 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.factories'])
         controller: 'StuffCtrl'
       }
     }
-  });
+    // ,
+    // resolve : {
+    //   'singleStuff': function ($http, $stateParams) {
+    //     $http.get('js/data.json').then(function(resp) {
+    //       console.log($stateParams.stuffId);
+    //       return resp.data[+$stateParams.stuffId]
+    //     })
+    //   }
+    // }
+  })
+
+  .state('app.donationTarget', {
+    url: '/donationTarget',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/donationTarget.html',
+        controller: 'DonationTargetCtrl'
+      }
+    }
+    
+  })
+
+  .state('app.profile', {
+    url: '/profile',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/profile.html',
+        controller: 'ProfileCtrl'
+      }
+    }
+    
+  })
+  .state('app.thankyou', {
+    url: '/thankyou',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/thankyou.html',
+        controller: 'ThanksCtrl'
+      }
+    }
+    
+  })
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/stuffs');
   // $httpProvider.defaults.headers.common['Access-Control-Allow-Origin'] = '*';

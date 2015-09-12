@@ -1,5 +1,16 @@
-<ion-view view-title="Stuff">
+<ion-view view-title="{{stuff.title}}">
   <ion-content>
     <h1>{{stuff.title}}</h1>
+    <img ng-src="{{stuff.img}}" alt="">
+    <div class="row">
+    	<button class="button icon ion-chevron-up" ng-click="increase()"></button>
+    	<input type="number" ng-model="amount">
+    	<button class="button icon ion-chevron-down" ng-click="decrease()"></button>
+    </div>
+
+
+    <button class="button button-block button-balanced" ng-click="saveDonation()">
+	  Donate {{total}}<i class="icon ion-social-usd" style="font-size: 14px"></i>
+	</button>
   </ion-content>
 </ion-view>

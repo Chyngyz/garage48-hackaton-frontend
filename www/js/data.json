@@ -1,0 +1,49 @@
+[{
+	"id": 1,
+	"title": "Sierra Coffee",
+	"price": 3,
+	"category": "soft drink",
+	"img": "http://lorempixel.com/300/300/food/"
+	},
+	{
+	"id": 2,
+	"title": "Snickers",
+	"price": 2,
+	"category": "soft drink",
+	"img": "http://lorempixel.com/301/301/food/"
+	},
+	{
+	"id": 3,
+	"title": "Ice Cream",
+	"price": 1,
+	"category": "soft drink",
+	"img": "http://lorempixel.com/302/302/food/"
+	},
+	{
+	"id": 4,
+	"title": "Shoro",
+	"price": 1,
+	"category": "soft drink",
+	"img": "http://lorempixel.com/303/303/food/"
+	},
+	{
+	"id": 5,
+	"title": "Starbucks",
+	"price": 3,
+	"category": "soft drink",
+	"img": "http://lorempixel.com/304/304/food/"
+	},
+	{
+	"id": 6,
+	"title": "Hamburger",
+	"price": 2,
+	"category": "soft drink",
+	"img": "http://lorempixel.com/305/305/food/"
+	},
+	{
+	"id": 7,
+	"title": "Bus Ticket",
+	"price": 1,
+	"category": "soft drink",
+	"img": "http://lorempixel.com/306/306/food/"
+	}]

@@ -1,0 +1,23 @@
+<div class="bar bar-header bar-danger">
+  <button class="button button-icon"><i class="icon-person-add"></i></button>
+  <h1 class="title">Profile</h1>
+  <button class="button button-icon"><i class="icon-gear-b"></i></button>
+</div>
+
+<ion-content has-header="true">
+  <div id="profile-bg"></div>
+  <div id="content">
+    <div id="profile-info">
+      <img id="profile-image" src="https://avatars2.githubusercontent.com/u/1857026?v=3&s=460">
+      <h3 id="profile-name">Chyngyz Arystan uulu</h3>
+      <span id="profile-description">Total Amount Given for Charity: <br><b style="font-size: 36px">{{totalAmount}}<i class="icon ion-social-usd"></i></b></span>
+    </div>
+    <ion-list>
+      <ion-item ng-repeat="data in donationHistoryData">
+      	{{data.text}}
+      	<div class="post-amount">{{data.amount}} <i class="icon ion-social-usd"></i></div>
+        <div class="post-time">{{data.date | date : mediumDate}}</div>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

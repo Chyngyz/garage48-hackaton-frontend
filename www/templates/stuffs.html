@@ -4,12 +4,10 @@
   	<div class="list card" ng-repeat="item in stuffs">
 
 	  <div class="item item-image">
-	    <img ng-src="http://lorempixel.com/300/300/food">
+	    <img ng-src="{{item.img}}">
 	  </div>
 
 	  <a class="item item-icon-left assertive" href="#/app/stuffs/{{item.id}}">
-	    
-	    <i class="icon ion-social-usd"></i>
 	    <p class="pull-right">{{item.title}}</p>
 	  </a>
 
