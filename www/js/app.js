@@ -22,7 +22,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.factories'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
   $stateProvider
 
     .state('app', {
@@ -49,25 +49,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.factories'])
         }
       }
     })
-    .state('app.staffs', {
-      url: '/staffs',
+    .state('app.stuffs', {
+      url: '/stuffs',
       views: {
         'menuContent': {
-          templateUrl: 'templates/staffs.html',
-          controller: 'StaffsCtrl'
+          templateUrl: 'templates/stuffs.html',
+          controller: 'StuffsCtrl'
         }
       }
     })
 
   .state('app.single', {
-    url: '/staffs/:staffId',
+    url: '/stuffs/:stuffId',
     views: {
       'menuContent': {
-        templateUrl: 'templates/staff.html',
-        controller: 'StaffCtrl'
+        templateUrl: 'templates/stuff.html',
+        controller: 'StuffCtrl'
       }
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/staffs');
+  $urlRouterProvider.otherwise('/app/stuffs');
+  // $httpProvider.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 });

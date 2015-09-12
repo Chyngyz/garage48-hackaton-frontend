@@ -41,10 +41,22 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('StaffsCtrl', function($scope, staffs) {
-  $scope.staffs =staffs.list;
-  console.log($scope.staffs);
+.controller('StuffsCtrl', function($scope, stuffs, data) {
+  stuffs.success(function(dat){
+    $scope.stuffs = dat;
+    data.save(dat);
+  });
+
 })
 
-.controller('StaffCtrl', function($scope, $stateParams) {
+.controller('StuffCtrl', function($scope, stuffs, $stateParams, data) {
+
+  
+  for (var i = data.data.length - 1; i >= 0; i--) {
+    if ($stateParams.stuffId == data.data[i].id) {
+      $scope.stuff = data.data[i];
+      console.log(data.data[i]);
+    };
+  };
+  
 });

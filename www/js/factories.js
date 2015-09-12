@@ -1,31 +1,36 @@
 angular.module('starter.factories', [])
 
-.factory('staffs', function($http, $q, $ionicLoading) {
+.factory('stuffs', function($http, $q, $ionicLoading) {
 
-  var staff = {};
-  var n = 0;
+  return  $http.get('http://192.168.0.175:8085/rest-api/rest' + '/stuff/list');
 
-  $ionicLoading.show({
-    template: 'Loading...'
-  });
+  return obj;
+  // // $ionicLoading.show({
+  // //   template: 'Loading...'
+  // // });
 
-  staff.list = [];
-  staff.add = function () {
-    return $http.get('http://api.randomuser.me/?q=' + (n++))
-      .then(function (response) {
-        staff.list.push(response.data.results[0].user);
-      })    
-  };
 
-  staff.ready = $q.all([
-    staff.add(),
-    staff.add(),
-    staff.add()
-     ])
-    .then(function() {
-      $ionicLoading.hide();
-    })
 
-  return staff;
+  // $http.get('http://192.168.0.175:8085/rest-api/rest' + '/stuff/list')
+  //     .then(function (response) {
+  //       return stuff = response.data;
 
+  //     })
+  
+
+  // // stuff.ready = $q.all([stuff.add()])
+  // //   .then(function() {
+  // //     $ionicLoading.hide();
+  // //   })
+    
+  // return;
+
+})
+
+.service('data', function(){
+  this.data = {};
+  this.save = function(data) {
+    this.data = data;
+  }
+  
 });
