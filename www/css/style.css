@@ -1,4 +1,64 @@
 /* Empty. Add your own CSS if you like */
+@font-face {
+    font-family: 'Harlow-Solid-Italic';
+    src:url('../fonts/Harlow/Harlow-Solid-Italic.ttf.woff') format('woff'),
+        url('../fonts/Harlow/Harlow-Solid-Italic.ttf.svg#Harlow-Solid-Italic') format('svg'),
+        url('../fonts/Harlow/Harlow-Solid-Italic.ttf.eot'),
+        url('../fonts/Harlow/Harlow-Solid-Italic.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* font-family: "MyriadProRegular"; */
+@font-face {
+    font-family: "MyriadProRegular";
+    src: url("../fonts/MyriadProRegular/MyriadProRegular.eot");
+    src: url("../fonts/MyriadProRegular/MyriadProRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/MyriadProRegular/MyriadProRegular.woff") format("woff"),
+    url("../fonts/MyriadProRegular/MyriadProRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "MyriadProBold"; */
+@font-face {
+    font-family: "MyriadProBold";
+    src: url("../fonts/MyriadProBold/MyriadProBold.eot");
+    src: url("../fonts/MyriadProBold/MyriadProBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/MyriadProBold/MyriadProBold.woff") format("woff"),
+    url("../fonts/MyriadProBold/MyriadProBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "MyriadProItalic"; */
+@font-face {
+    font-family: "MyriadProItalic";
+    src: url("../fonts/MyriadProItalic/MyriadProItalic.eot");
+    src: url("../fonts/MyriadProItalic/MyriadProItalic.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/MyriadProItalic/MyriadProItalic.woff") format("woff"),
+    url("../fonts/MyriadProItalic/MyriadProItalic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* font-family: "MyriadProBoldItalic"; */
+@font-face {
+    font-family: "MyriadProBoldItalic";
+    src: url("../fonts/MyriadProBoldItalic/MyriadProBoldItalic.eot");
+    src: url("../fonts/MyriadProBoldItalic/MyriadProBoldItalic.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/MyriadProBoldItalic/MyriadProBoldItalic.woff") format("woff"),
+    url("../fonts/MyriadProBoldItalic/MyriadProBoldItalic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+
+h1 { 
+   font-family: 'Harlow-Solid-Italic';
+}  
+
+
 #profile-bg {
     position: fixed;
     left: 0;
@@ -100,4 +160,8 @@
 
 #stuffCardIcons .item-icon-left {
   padding-left: 14px;
+}
+
+.title.header-item {
+  font-family: Harlow-Solid-Italic;
 }
