@@ -52,6 +52,7 @@ angular.module('starter.controllers', [])
 
   $http.get('http://moon-pro.cloudapp.net/rest-api/rest/stuff/list').then(function(resp) {
     $scope.stuffs = resp.data;
+    console.log(resp.data);
   }, function(err) {
     console.error('ERR', err);
   })
@@ -64,9 +65,18 @@ angular.module('starter.controllers', [])
 
 .controller('StuffCtrl', function($scope, $state, $stateParams, $localstorage, $http, $rootScope) {
 
+  // $scope.stuff = item;
+  // $scope.total = item.price;
   $http.get('http://moon-pro.cloudapp.net/rest-api/rest/stuff/list').then(function(resp) {
-    $scope.stuff = resp.data[+$stateParams.stuffId - 1]
+    resp.data.forEach(function(data){
+      console.log(data);
+      if(data.id == $stateParams.stuffId) {
+        return $scope.stuff = data;
+      }
+
+    })
     $scope.total = $scope.stuff.price;
+
   });
 
 
@@ -77,7 +87,7 @@ angular.module('starter.controllers', [])
     $scope.total = $scope.amount * +$scope.stuff.price;
   };
   $scope.decrease = function () {
-    if ($scope.amount >= 1) {
+    if ($scope.amount >= 2) {
       $scope.amount = $scope.amount - 1;
     };
     
@@ -127,13 +137,15 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('ThanksCtrl', function ($scope, $localstorage, $state) {
+.controller('ThanksCtrl', function ($scope, $localstorage, $state, $ionicHistory) {
   var donation = $localstorage.getObject('donation');
   $scope.amount = donation.amount;
   $scope.targeting = $localstorage.get('target');
 
   $scope.goHome = function () {
-    $state.go('app.stuffs');
+    console.log($ionicHistory.viewHistory());
+    $ionicHistory.goBack([-2]);
+    
   }
 
   $scope.hideBackButton = true;
@@ -164,3 +176,17 @@ angular.module('starter.controllers', [])
 
 
 });
+
+
+
+// angular.module('starter.directives', []).directive('background', function () {
+//     return {
+//         restrict: 'AC',
+//         link: function (scope, element, attrs) {          
+//            scope.$watch(attrs.stuffImg, function (value) {     
+//              element.css('background-image', 'url(' + attrs.stuffImg + ')');            
+//            });                      
+//         }
+//     }
+// });
+

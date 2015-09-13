@@ -151,17 +151,95 @@ h1 {
 
 #stuffCardIcons {
   width: 27%;
-  float: left;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 5px;
+  background: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-#stuffCardIcons:nth-child(3) {
-
+#stuffCardIcons:nth-child(3):after {
+  clear: both;
 }
 
-#stuffCardIcons .item-icon-left {
-  padding-left: 14px;
+#stuffCardIcons .stuffIcons {
+  width: 100%;
+}
+
+#stuffCardIcons .item {
+  background: none;
+  box-shadow: none;
 }
 
 .title.header-item {
   font-family: Harlow-Solid-Italic;
+}
+
+.pane {
+  background: #319ec5;
+}
+
+#detailsWrapperStuff {
+  padding: 20px 40px;
+  background-color: rgba(56, 126, 245, 0.63);
+  margin-top: 100%;
+  min-height: 175px;
+  width: 100%;
+  position: absolute;
+}
+
+#detailsWrapperStuff .decrease {
+
+}
+
+#detailsWrapperStuff .amountBlock {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 600;
+  font-family: Harlow-Solid-Italic;
+  color: white;
+  margin-bottom: 10px;
+}
+#detailsWrapperStuff .amountBlock .increase {
+  margin-left: 20px;
+}
+#detailsWrapperStuff .amountBlock .decrease {
+  margin-right: 20px;
+}
+#detailsWrapperStuff .amount {
+  font-size: 46px;
+}
+
+#detailsWrapperStuff .description {
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#detailsWrapperStuff .donateBtn {
+  text-align: center;
+  padding: 12px 8px;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: MyriadProBoldItalic;
+  background: #4ab2d7;
+}
+#detailsWrapperStuff .stuffTitle {
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  font-weight: 600;
+  font-family: MyriadProBoldItalic;
+  margin-bottom: 18px;
+}
+#imageBack {
+  position: relative;
+}
+
+#imageBack .bg-image {
+  position: absolute;
+  top: 0;
 }

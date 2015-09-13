@@ -34,7 +34,7 @@ angular.module('starter', ['ionic','ngResource', 'starter.controllers', 'starter
 
     .state('app', {
     url: '/app',
-    abstract: true,
+    abstract: false,
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })

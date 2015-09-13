@@ -1,34 +1,13 @@
 <ion-view view-title="Choose what to donate" hide-back-button="{{hideBackButton}}" id="homePage">
   <ion-content ng-init="">
 
-  	<div id="stuffCardIcons" class="list card" ng-repeat="item in stuffs">
+  	<a id="stuffCardIcons" class="list card" ng-repeat="item in stuffs" href="#/app/stuffs/{{item.id}}">
 
 	  <div class="item item-image">
-	    <img ng-src="http://lorempixel.com/300/300/food" >
+	    <img ng-src="{{item.icon}}">
 	  </div>
 
-	  <a class="item item-icon-left assertive" href="#/app/stuffs/{{item.id}}">
-	    <p class="pull-right">{{item.title}}</p>
-	  </a>
+	</a>
 
-	</div>
-
-  	<!-- <div class="row" ng-repeat="item in stuffs" ng-if="$index % 3 === 0">
-        <div class="col col-33" ng-if="$index < stuffs.length">
-            <a href="#/app/stuffs/{{item.id}}">
-            	<img ng-src="img/ionic.png" width="100%" />
-            </a>
-        </div>
-        <div class="col col-33" ng-if="$index + 1 < stuffs.length">
-            <a href="#/app/stuffs/{{item.id}}">
-            	<img ng-src="img/ionic.png" width="100%" />
-            </a>
-        </div>
-        <div class="col col-33" ng-if="$index + 2 < stuffs.length">
-            <a href="#/app/stuffs/{{item.id}}">
-            	<img ng-src="img/ionic.png" width="100%" />
-            </a>
-        </div>
-    </div> -->
   </ion-content>
 </ion-view>

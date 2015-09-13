@@ -1,8 +1,30 @@
-<ion-view view-title="{{stuff.title}}">
+<ion-view view-title="{{stuff.title}}" id="singleStuffPage" >
   <ion-content>
-    <h1>{{stuff.title}}</h1>
-    <img ng-src="http://lorempixel.com/300/300/food" alt="" style="width:100%;">
-    <div class="row">
+    <div class="" id="imageBack">
+        <div class="bg-image">
+            <img src="{{stuff.image}}" alt="" style="width:100%; height:100%; ">
+        </div>
+        <div id="detailsWrapperStuff">
+            <div class="stuffTitle">
+                {{stuff.title}} - {{total}}$
+            </div>
+
+            <div class="amountBlock">
+                <span class="decrease" ng-click="decrease()">
+                    <i class=" icon ion-chevron-left"></i>
+                </span>
+                <span class="amount" ng-model="amount">{{amount}}</span>
+                <span class="increase" ng-click="increase()">
+                    <i class=" icon ion-chevron-right"></i>
+                </span>
+            </div>
+            
+            <div class="donateBtn" ng-click="saveDonation()">
+                Donate </i>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="row">
     	<button class="button icon ion-chevron-up" ng-click="increase()"></button>
     	<input type="number" ng-model="amount">
     	<button class="button icon ion-chevron-down" ng-click="decrease()"></button>
@@ -11,6 +33,6 @@
 
     <button class="button button-block button-balanced" ng-click="saveDonation()">
 	  Donate {{total}}<i class="icon ion-social-usd" style="font-size: 14px"></i>
-	</button>
+	</button> -->
   </ion-content>
 </ion-view>
