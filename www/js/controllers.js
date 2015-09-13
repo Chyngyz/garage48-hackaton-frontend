@@ -50,20 +50,21 @@ angular.module('starter.controllers', [])
 
 .controller('StuffsCtrl', function($scope, $localstorage, $http) {
 
-  $http.get('js/data.json').then(function(resp) {
+  $http.get('http://moon-pro.cloudapp.net/rest-api/rest/stuff/list').then(function(resp) {
     $scope.stuffs = resp.data;
   }, function(err) {
     console.error('ERR', err);
   })
 
+  $scope.hideBackButton = true;
+
   
 
 })
 
-.controller('StuffCtrl', function($scope, $state, $stateParams, $localstorage, $http) {
+.controller('StuffCtrl', function($scope, $state, $stateParams, $localstorage, $http, $rootScope) {
 
-  $http.get('js/data.json').then(function(resp) {
-    console.log($stateParams.stuffId);
+  $http.get('http://moon-pro.cloudapp.net/rest-api/rest/stuff/list').then(function(resp) {
     $scope.stuff = resp.data[+$stateParams.stuffId - 1]
     $scope.total = $scope.stuff.price;
   });
@@ -73,7 +74,7 @@ angular.module('starter.controllers', [])
   // $scope.total = $scope.stuff.price * $scope.amount;
   $scope.increase = function () {
     $scope.amount = $scope.amount + 1;
-    $scope.total = $scope.amount * $scope.stuff.price;
+    $scope.total = $scope.amount * +$scope.stuff.price;
   };
   $scope.decrease = function () {
     if ($scope.amount >= 1) {
@@ -84,10 +85,14 @@ angular.module('starter.controllers', [])
   };
 
   $scope.saveDonation = function () {
+    $scope.stuff.amount = $scope.amount;
+
+
     var obj = {
       id: $scope.stuff.id,
-      totalMoneyToTransfer: $scope.total
+      amount: $scope.total
     };
+
 
     $localstorage.setObject('donation', obj);
 
@@ -95,36 +100,44 @@ angular.module('starter.controllers', [])
     $state.go('app.donationTarget');
   }
 
-  
-  
-  // for (var i = $scope.stuffs.length - 1; i >= 0; i--) {
-  //   if ($stateParams.stuffId == $scope.stuffs[i].id) {
-  //     $scope.stuff = $scope.stuffs[i];
-  //     console.log($scope.stuffs[i]);
-  //   };
-  //   console.log($scope.stuffs[i]);
-  // };
+
   
 })
 
-.controller('DonationTargetCtrl', function ($scope, $localstorage, $state) {
+.controller('DonationTargetCtrl', function ($scope, $localstorage, $state, $http, $rootScope) {
   var donation = $localstorage.getObject('donation');
   $scope.addTarget = function (target) {
+    var obj = $localstorage.getObject('donation');
     
+    var array = [obj.id, obj.amount];
+    $localstorage.set('target', target);
     
-    donation.target = target;
-    $localstorage.setObject('donation', donation);
+    // donation.target = target;
+    // $localstorage.setObject('donation', donation);
+    $http({
+      method: 'POST',
+      url: 'http://moon-pro.cloudapp.net/rest-api/rest/donation/donate',
+      headers: {'Content-Type': 'application/json'},
+      data: array
+    }).success(function(resp) {
+      console.log('works');
+    });
+
     $state.go('app.thankyou');
   }
-
-  console.log(donation);
 })
 
-.controller('ThanksCtrl', function ($scope, $localstorage) {
+.controller('ThanksCtrl', function ($scope, $localstorage, $state) {
   var donation = $localstorage.getObject('donation');
-  $scope.amount = donation.totalMoneyToTransfer;
-  $scope.targeting = donation.target;
-  console.log(donation);
+  $scope.amount = donation.amount;
+  $scope.targeting = $localstorage.get('target');
+
+  $scope.goHome = function () {
+    $state.go('app.stuffs');
+  }
+
+  $scope.hideBackButton = true;
+
 
 })
 

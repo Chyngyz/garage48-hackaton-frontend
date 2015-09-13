@@ -88,3 +88,16 @@
 .button .icon:before {
   font-size: 16px;
 }
+
+#stuffCardIcons {
+  width: 27%;
+  float: left;
+}
+
+#stuffCardIcons:nth-child(3) {
+
+}
+
+#stuffCardIcons .item-icon-left {
+  padding-left: 14px;
+}

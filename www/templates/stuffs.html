@@ -1,10 +1,10 @@
-<ion-view view-title="Choose what to donate">
+<ion-view view-title="Choose what to donate" hide-back-button="{{hideBackButton}}">
   <ion-content ng-init="">
 
-  	<div class="list card" ng-repeat="item in stuffs">
+  	<div id="stuffCardIcons" class="list card" ng-repeat="item in stuffs">
 
 	  <div class="item item-image">
-	    <img ng-src="{{item.img}}">
+	    <img ng-src="http://lorempixel.com/300/300/food" >
 	  </div>
 
 	  <a class="item item-icon-left assertive" href="#/app/stuffs/{{item.id}}">

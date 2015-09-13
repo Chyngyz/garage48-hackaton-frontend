@@ -1,8 +1,11 @@
-<ion-view view-title="">
+<ion-view view-title="" has-header="true" hide-back-button="{{hideBackButton}}">
   <ion-content>
     
     <h1 class="text-center">Thank You.</h1>
 
     <h4 class="text-center">Well done! <br> You have transfered <b>{{amount}}<i class="icon ion-social-usd"></i></b> to <b>{{targeting}}</b></h4>
+    <button class="button button-full button-large button-positive" ng-click="goHome()">
+	  Go Back.
+	</button>
   </ion-content>
 </ion-view>
