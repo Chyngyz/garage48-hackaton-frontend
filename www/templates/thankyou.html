@@ -3,9 +3,15 @@
     
     <h1 class="text-center" style="color: white; margin-top: 100px;">Thank You.</h1>
 
-    <h4 class="text-center" style="color: white; font-size: 18px; line-height: 1.5;">Well done! <br> You have transfered <b>{{amount}}<i class="icon ion-social-usd"></i></b> to <b>{{targeting}}</b></h4>
+    <div ng-show="amount">
+
+	    <h4 class="text-center" style="color: white; font-size: 18px; line-height: 1.5;">Well done! <br> You have transfered <b>{{amount}}<i class="icon ion-social-usd"></i></b> to <b>{{targeting}}</b></h4>
+
+	</div>
+
     <a class="button button-full button-large button-positive" ng-href="#/app/stuffs" style="background: white; color: #319ec5; margin-top: 30px;">
 	  Go Back.
 	</a>
+
   </ion-content>
 </ion-view>

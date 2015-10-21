@@ -1,49 +1,86 @@
-[{
-	"id": 1,
-	"title": "Sierra Coffee",
-	"price": 3,
-	"category": "soft drink",
-	"img": "http://lorempixel.com/300/300/food/"
+[	
+	{
+		"id": 1,
+		"title": "Ice Cream",
+		"price": 1,
+		"img": "img/demo/bg/ice-cream.jpg",
+		"icon": "img/demo/icons/icons_01.png"
 	},
 	{
-	"id": 2,
-	"title": "Snickers",
-	"price": 2,
-	"category": "soft drink",
-	"img": "http://lorempixel.com/301/301/food/"
+		"id": 2,
+		"title": "Kit Kat",
+		"price": 0.4,
+		"img": "img/demo/bg/kitkat.jpg",
+		"icon": "img/demo/icons/icons_02.png"
 	},
 	{
-	"id": 3,
-	"title": "Ice Cream",
-	"price": 1,
-	"category": "soft drink",
-	"img": "http://lorempixel.com/302/302/food/"
+		"id": 3,
+		"title": "Hamburger",
+		"price": "1.2",
+		"img": "img/demo/bg/hamburger.jpg",
+		"icon": "img/demo/icons/icons_03.png"
 	},
 	{
-	"id": 4,
-	"title": "Shoro",
-	"price": 1,
-	"category": "soft drink",
-	"img": "http://lorempixel.com/303/303/food/"
+		"id": 4,
+		"title": "Cake Slice",
+		"price": 0.5,
+		"img": "img/demo/bg/cake.jpg",
+		"icon": "img/demo/icons/icons_04.png"
 	},
 	{
-	"id": 5,
-	"title": "Starbucks",
-	"price": 3,
-	"category": "soft drink",
-	"img": "http://lorempixel.com/304/304/food/"
+		"id": 5,
+		"title": "Apple",
+		"price": 0.3,
+		"img": "img/demo/bg/apples.jpg",
+		"icon": "img/demo/icons/icons_05.png"
 	},
 	{
-	"id": 6,
-	"title": "Hamburger",
-	"price": 2,
-	"category": "soft drink",
-	"img": "http://lorempixel.com/305/305/food/"
+		"id": 6,
+		"title": "Pop Corn",
+		"price": 1.2,
+		"img": "img/demo/bg/popcorn.jpg",
+		"icon": "img/demo/icons/icons_06.png"
 	},
 	{
-	"id": 7,
-	"title": "Bus Ticket",
-	"price": 1,
-	"category": "soft drink",
-	"img": "http://lorempixel.com/306/306/food/"
-	}]
+		"id": 7,
+		"title": "Cigarettes",
+		"price": 1,
+		"img": "img/demo/bg/cigarettes.jpg",
+		"icon": "img/demo/icons/icons_07.png"
+	},
+	{
+		"id": 8,
+		"title": "Pepsi",
+		"price": 1,
+		"img": "img/demo/bg/coke.jpg",
+		"icon": "img/demo/icons/icons_08.png"
+	},
+	{
+		"id": 9,
+		"title": "Shoro",
+		"price": 1,
+		"img": "img/demo/bg/shoro.jpg",
+		"icon": "img/demo/icons/icons_09.png"
+	},
+	{
+		"id": 10,
+		"title": "Cinema Ticket",
+		"price": 2,
+		"img": "img/demo/bg/cinema.jpg",
+		"icon": "img/demo/icons/icons_10.png"
+	},
+	{
+		"id": 11,
+		"title": "Bus Ticket",
+		"price": 0.3,
+		"img": "img/demo/bg/taxi.jpg",
+		"icon": "img/demo/icons/icons_11.png"
+	},
+	{
+		"id": 12,
+		"title": "Pizza",
+		"price": 4,
+		"img": "img/demo/bg/pizza.jpg",
+		"icon": "img/demo/icons/icons_12.png"
+	}
+]

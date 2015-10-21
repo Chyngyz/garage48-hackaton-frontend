@@ -169,6 +169,7 @@ h1 {
 #stuffCardIcons .item {
   background: none;
   box-shadow: none;
+  padding: 0;
 }
 
 .title.header-item {
@@ -242,4 +243,12 @@ h1 {
 #imageBack .bg-image {
   position: absolute;
   top: 0;
+}
+
+.item-image {
+  padding: 35px;
+}
+
+.item-text-desc {
+  padding: 10px 12px;
 }

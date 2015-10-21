@@ -52,7 +52,8 @@ angular.module('starter', ['ionic','ngResource', 'starter.controllers', 'starter
       url: '/browse',
       views: {
         'menuContent': {
-          templateUrl: 'templates/browse.html'
+          templateUrl: 'templates/browse.html',
+          controller: 'NotifyCtrl'
         }
       }
     })
@@ -102,6 +103,15 @@ angular.module('starter', ['ionic','ngResource', 'starter.controllers', 'starter
       'menuContent': {
         templateUrl: 'templates/profile.html',
         controller: 'ProfileCtrl'
+      }
+    }
+    
+  })
+  .state('app.thankyou2', {
+    url: '/thankyou',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/thankyou2.html'
       }
     }
     

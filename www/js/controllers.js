@@ -50,11 +50,11 @@ angular.module('starter.controllers', [])
 
 .controller('StuffsCtrl', function($scope, $localstorage, $http) {
 
-  $http.get('http://moon-pro.cloudapp.net/rest-api/rest/stuff/list').then(function(resp) {
+  $http.get('js/data.json').then(function(resp) {
     $scope.stuffs = resp.data;
-    console.log(resp.data);
+    //console.log(resp.data);
   }, function(err) {
-    console.error('ERR', err);
+    console.log('ERR', err);
   })
 
   $scope.hideBackButton = true;
@@ -65,23 +65,22 @@ angular.module('starter.controllers', [])
 
 .controller('StuffCtrl', function($scope, $state, $stateParams, $localstorage, $http, $rootScope) {
 
-  // $scope.stuff = item;
-  // $scope.total = item.price;
-  $http.get('http://moon-pro.cloudapp.net/rest-api/rest/stuff/list').then(function(resp) {
+
+  $http.get('js/data.json').then(function(resp) {
     resp.data.forEach(function(data){
-      console.log(data);
+      //console.log(data);
       if(data.id == $stateParams.stuffId) {
         return $scope.stuff = data;
       }
 
     })
     $scope.total = $scope.stuff.price;
-
+  }, function(err) {
+    console.log('ERR', err);
   });
 
 
   $scope.amount = 1;
-  // $scope.total = $scope.stuff.price * $scope.amount;
   $scope.increase = function () {
     $scope.amount = $scope.amount + 1;
     $scope.total = $scope.amount * +$scope.stuff.price;
@@ -124,14 +123,14 @@ angular.module('starter.controllers', [])
     
     // donation.target = target;
     // $localstorage.setObject('donation', donation);
-    $http({
-      method: 'POST',
-      url: 'http://moon-pro.cloudapp.net/rest-api/rest/donation/donate',
-      headers: {'Content-Type': 'application/json'},
-      data: array
-    }).success(function(resp) {
-      console.log('works');
-    });
+    // $http({
+    //   method: 'POST',
+    //   url: 'http://moon-pro.cloudapp.net/rest-api/rest/donation/donate',
+    //   headers: {'Content-Type': 'application/json'},
+    //   data: array
+    // }).success(function(resp) {
+    //   console.log('works');
+    // });
 
     $state.go('app.thankyou');
   }
@@ -147,6 +146,17 @@ angular.module('starter.controllers', [])
     $ionicHistory.goBack([-2]);
     
   }
+
+  $scope.hideBackButton = true;
+
+
+})
+
+.controller('NotifyCtrl', function ($scope, $localstorage, $state, $ionicHistory) {
+
+  $scope.donateSpecial = function () {
+    $state.go('app.thankyou2');
+  };
 
   $scope.hideBackButton = true;
 
